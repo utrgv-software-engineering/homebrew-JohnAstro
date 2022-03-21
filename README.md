@@ -1,4 +1,4 @@
-# homebrew
+# homebrew midsemester project
 
 A new Flutter project.
 
