@@ -64,6 +64,7 @@ class _CupsState extends State<Cups> {
           children: [
             Text(
               'How many cups would you like?',
+              key: Key('enter-cups-text'),
               style: TextStyle(fontSize: 18, color: Color(0xFF4C748B)),
             ),
 

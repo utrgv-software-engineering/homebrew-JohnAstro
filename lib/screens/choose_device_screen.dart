@@ -20,7 +20,7 @@ class _ChooseDeviceScreenState extends State<ChooseDeviceScreen> {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text(
             'What coffee maker are you using?',
-            key: Key('device-screen-prompt'),
+            key: Key('choose-maker-prompt'),
             style: TextStyle(fontSize: 18, color: Color(0xFF4C748B)),
           ),
           Padding(

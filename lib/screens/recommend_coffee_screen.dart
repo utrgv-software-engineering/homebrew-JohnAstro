@@ -62,7 +62,7 @@ class _RecommendCoffeeState extends State<RecommendCoffee> {
                       padding: const EdgeInsets.fromLTRB(101, 12, 101, 0),
                       child: Text(
                         'Recommended',
-                        key: Key('Recommended-text'),
+                        key: Key('recommended-text'),
                         style: TextStyle(
                             fontFamily: 'Kollektif',
                             fontSize: 18,
@@ -80,12 +80,14 @@ class _RecommendCoffeeState extends State<RecommendCoffee> {
                       padding: const EdgeInsets.only(top: 17.0),
                       child: Text(
                         '${recommendations['Coffee']}g - course ground coffee',
+                        key: Key('coffee-text'),
                         style: TextStyle(
                             fontFamily: 'Kollekif', color: Color(0xFF4C748B)),
                       ),
                     ),
                     Text(
                       '${recommendations['Water']}g - water',
+                      key: Key('water-text'),
                       style: TextStyle(
                           fontFamily: 'Kollekif', color: Color(0xFF4C748B)),
                     ),
