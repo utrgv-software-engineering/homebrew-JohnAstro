@@ -70,7 +70,7 @@ class _RecommendCoffeeState extends State<RecommendCoffee> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(19, 195, 19, 170),
+              padding: const EdgeInsets.fromLTRB(19, 170, 19, 170),
               child: Container(
                 width: 337,
                 height: 164,
