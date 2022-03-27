@@ -58,6 +58,15 @@ class _CupsState extends State<Cups> {
 
     return Scaffold(
       backgroundColor: Color(0xFFF3F3F3),
+      appBar: AppBar(
+        leading: IconButton(
+            key: Key('back-button'),
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(Icons.arrow_back_ios)),
+        backgroundColor: Color(0xFFF3F3F3),
+        foregroundColor: Color(0xFF4C748B),
+        elevation: 0,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
