@@ -19,7 +19,8 @@ class _ChooseDeviceScreenState extends State<ChooseDeviceScreen> {
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text(
-            'What Coffee maker are you using?',
+            'What coffee maker are you using?',
+            key: Key('device-screen-prompt'),
             style: TextStyle(fontSize: 18, color: Color(0xFF4C748B)),
           ),
           Padding(
@@ -117,10 +118,7 @@ class _ChooseDeviceScreenState extends State<ChooseDeviceScreen> {
               });
             },
             style: continueButtonStyle(_continue),
-            child: Text(
-              'Continue',
-              key: Key('continue-button-text'),
-            ),
+            child: Text('Continue'),
           ),
         ]),
       ),
