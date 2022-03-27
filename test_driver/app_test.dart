@@ -26,8 +26,45 @@ void main() {
       Then I should see "63g - course ground coffee"
       And I should see "887g - water"
     */
-    test("should give recommendation for French Press", () {
-      // your code here
+    test("should give recommendation for French Press", () async {
+      // Find french press button, continue button and screen text
+      final frenchPressBtnFinder = find.byValueKey('french-press-button');
+      final continueBtnFinder = find.byValueKey('continue-button');
+      final chooseMakerPromptFinder = find.byValueKey('choose-maker-prompt');
+
+      // Expect choose device screen
+      expect(await driver.getText(chooseMakerPromptFinder),
+          'What coffee maker are you using?');
+
+      // Tap french press button and continue
+      await driver.tap(frenchPressBtnFinder);
+      await driver.tap(continueBtnFinder);
+
+      // Find prompt, text field, and continue button
+      final enterCupsPromptFinder = find.byValueKey('enter-cups-text');
+      final cupsTextfieldFinder = find.byValueKey('cups-textfield');
+      final continueBtnFinder2 = find.byValueKey('continue-button2');
+
+      // Expect choose cups screen
+      expect(await driver.getText(enterCupsPromptFinder),
+          'How many cups would you like?');
+
+      // Tap text field and enter 5 before continue
+      await driver.tap(cupsTextfieldFinder);
+      await driver.enterText('5');
+      await driver.tap(continueBtnFinder2);
+
+      // Find prompt, and recommened coffee and water text
+      final recommendedPromptFinder = find.byValueKey('recommended-text');
+      final coffeeFinder = find.byValueKey('coffee-text');
+      final waterFinder = find.byValueKey('water-text');
+
+      // Expect to be in recommended screen
+      expect(await driver.getText(recommendedPromptFinder), 'Recommended');
+
+      // Expect recommended coffee and water
+      expect(await driver.getText(coffeeFinder), '63g - course ground coffee');
+      expect(await driver.getText(waterFinder), '887g - water');
     });
 
     /*
