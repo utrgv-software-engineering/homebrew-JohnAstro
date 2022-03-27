@@ -27,10 +27,26 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF4C748B),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text("HOMEBREW"), Text("Great Coffee at Home")],
+          children: [
+            Text(
+              "HOMEBREW",
+              style: TextStyle(
+                  fontFamily: 'norwester',
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 48),
+            ),
+            Text(
+              "Great Coffee at Home",
+              style: TextStyle(
+                  fontFamily: 'Kollektif',
+                  color: Color(0xFFFFFFFF),
+                  fontSize: 18),
+            )
+          ],
         ),
       ),
     );
