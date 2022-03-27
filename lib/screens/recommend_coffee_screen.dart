@@ -18,25 +18,39 @@ class _RecommendCoffeeState extends State<RecommendCoffee> {
   // Input: cups of coffee and coffee maker
   // Output: rounded grams of coffee and water needed
   _getRecommendation(int cups, String maker) {
+    // Calculate water in grams given cups
     int ounces = CoffeeTools.cupsToOunces(cups);
     double water = CoffeeTools.ouncesToGrams(ounces);
+
+    // Round the double for UI and int for coffee grams calculation
     int roundedWater = water.round();
+    int coffeeGrams;
 
     // Check the type of coffee maker and return map with calculations
     if (maker == 'french') {
-      int coffeeGrams = CoffeeTools.frenchPress(water).round();
+      coffeeGrams = CoffeeTools.frenchPress(water).round();
       Map<String, Object> rec = {'Coffee': coffeeGrams, 'Water': roundedWater};
       return rec;
     } else if (maker == 'drip') {
-      int coffeeGrams = CoffeeTools.dripMachine(water).round();
+      coffeeGrams = CoffeeTools.dripMachine(water).round();
       Map<String, Object> rec = {'Coffee': coffeeGrams, 'Water': roundedWater};
       return rec;
     }
   }
 
+  // Input: Coffee maker type
+  // Output: Coffee type
+  _getCoffeeType(String maker) {
+    if (maker == 'french') {
+      return 'course';
+    } else if (maker == 'drip') {
+      return 'medium';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool _continue = true;
+    // Get Recommendations
     Map<String, Object> recommendations =
         _getRecommendation(widget.cups, widget.maker);
 
@@ -79,7 +93,7 @@ class _RecommendCoffeeState extends State<RecommendCoffee> {
                     Padding(
                       padding: const EdgeInsets.only(top: 17.0),
                       child: Text(
-                        '${recommendations['Coffee']}g - course ground coffee',
+                        '${recommendations['Coffee']}g - ${_getCoffeeType(widget.maker)} ground coffee',
                         key: Key('coffee-text'),
                         style: TextStyle(
                             fontFamily: 'Kollekif', color: Color(0xFF4C748B)),
@@ -106,7 +120,7 @@ class _RecommendCoffeeState extends State<RecommendCoffee> {
               ),
             ),
             ElevatedButton(
-                key: Key('Done-button'),
+                key: Key('done-button'),
                 onPressed: () {
                   Navigator.push(
                       context,
