@@ -40,6 +40,7 @@ class _CupsState extends State<Cups> {
         cups == '0' ||
         cups.contains(' ') ||
         cups.startsWith(',') ||
+        cups.startsWith('-') ||
         cups.startsWith('.')) {
       cupsTextFieldErrorMessage = 'Invalid';
       showError = true;
