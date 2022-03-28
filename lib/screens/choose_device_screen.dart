@@ -54,7 +54,7 @@ class _ChooseDeviceScreenState extends State<ChooseDeviceScreen> {
                         children: [
                           Text(
                             'French Press',
-                            style: TextStyle(fontFamily: 'Montserrat'),
+                            style: TextStyle(fontFamily: 'Montserrat-Medium'),
                           ),
                           Icon(Icons.check,
                               color: _frenchPress
@@ -88,7 +88,7 @@ class _ChooseDeviceScreenState extends State<ChooseDeviceScreen> {
                         children: [
                           Text(
                             'Drip Machine',
-                            style: TextStyle(fontFamily: 'Montserrat'),
+                            style: TextStyle(fontFamily: 'Montserrat-Medium'),
                           ),
                           Icon(Icons.check,
                               color: _dripMachine

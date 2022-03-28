@@ -61,11 +61,17 @@ flutter:
         - asset: assets/Montserrat-Regular.ttf
         - asset: assets/Montserrat-Italic.ttf
           style: italic
+
+    - family: Montserrat-Medium
+      fonts:
+        - asset: assets/Montserrat-Medium.ttf
+
     - family: Kollektif
       fonts:
         - asset: assets/Kollektif.ttf
         - asset: assets/Kollektif-Italic.ttf
           style: italic
+          
     - family: norwester
       fonts:
         - asset: assets/norwester.otf
